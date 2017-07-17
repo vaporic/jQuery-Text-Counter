@@ -51,13 +51,13 @@
 
             // if max is auto retrieve value
             if (base.options.max == 'auto') {
-                var max = base.$el.attr('maxlength');
+                var max = base.$el.attr('data-maxlength');
 
                 if (typeof max !== 'undefined' && max !== false) {
                     base.options.max = max;
                 }
                 else {
-                    base.$container.text('error: [maxlength] attribute not set');
+                    base.$container.text('error: [data-maxlength] attribute not set');
                 }
             }
 
@@ -252,7 +252,7 @@
     $.textcounter.defaultOptions = {
         'type'                      : "character",              // "character" or "word"
         'min'                       : 0,                        // minimum number of characters/words
-        'max'                       : 200,                      // maximum number of characters/words, -1 for unlimited, 'auto' to use maxlength attribute
+        'max'                       : 200,                      // maximum number of characters/words, -1 for unlimited, 'auto' to use data-maxlength attribute
         'countContainerElement'     : "div",                    // HTML element to wrap the text count in
         'countContainerClass'       : "text-count-wrapper",     // class applied to the countContainerElement
         'textCountClass'            : "text-count",             // class applied to the counter length
